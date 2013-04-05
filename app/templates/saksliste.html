@@ -1,0 +1,15 @@
+<div ng-controller="sakerController">
+    <h1>Åpne saker</h1>
+    <ul>
+        <li ng-repeat="sak in saker"><a href="#/sak/{{sak._id.$oid}}">{{sak.tittel}}</a></li>
+    </ul>
+
+    <button class="vis-{{!nySakSkjemaVisibilitet}}" ng-click="visNySakSkjema()">Opprett ny sak</button>
+    <form id="nySakSkjema" class="vis-{{nySakSkjemaVisibilitet}}">
+        <label for="tittel">Tittel:</label>
+        <input id="tittel" ng-model="nySakstittel" type="text"/>
+        <label for="beskrivelse">Beskrivelse:</label>
+        <textarea ng-model="nySaksbeskrivelse" id="beskrivelse"></textarea>
+        <button ng-click="leggInnNySak()">OK</button>
+    </form>
+</div>
